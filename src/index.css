@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*odificando scroll*/
+html::-webkit-scrollbar{
+    -webkit-appearance: none;
+    width: 5px;
+    
+}
+/*fondo srcoll*/
+html::-webkit-scrollbar-track{
+    background-color: #111827;
+}
+/*up scroll*/
+html::-webkit-scrollbar-thumb{
+    background-color: #555A88;
+    border-radius: 1rem;
+}
