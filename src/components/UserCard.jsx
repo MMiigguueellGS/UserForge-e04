@@ -17,11 +17,11 @@ const UserCard = ({user,deleteUsers,handleClickUpdateUser,modalVisible,setModalV
                 <img className="w-24 h-24 mb-3 rounded-full shadow-lg " src={user.image_url} alt="Bonnie image"/>
                 <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">{user.first_name} {user.last_name}</h5>
                 <section className="grid w-full border-b-2 border-[#E5E5E5]  border-t-2 py-4    ">
-                    <span className="text-sm text-black ">Correo:</span>
-                    <span className="text-sm text-gray-500 dark:text-gray-400">{user.email}</span>
+                    <span className="text-sm text-black ">CORREO</span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400 mb-3  font-semibold">{user.email}</span>
 
-                    <span className="text-sm text-black">Cumpleaños:</span>
-                    <span className="text-sm text-gray-500 dark:text-gray-400"><i className='bx bxs-cake pr-2'></i>{user.birthday?user.birthday:"No se ingreso"}</span>
+                    <span className="text-sm text-black">CUMPPLEAÑOS</span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400 flex items-center font-semibold"><i className='bx bxs-cake pr-2 text-xl '></i>{user.birthday?user.birthday:"No se ingreso"}</span>
                 </section>
                 
                 <div className="flex mt-4 space-x-3 md:mt-6 ">

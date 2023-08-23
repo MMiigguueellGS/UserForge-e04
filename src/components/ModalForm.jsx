@@ -66,7 +66,7 @@ return (
         
         <form 
             onSubmit={handleSubmit(submit)} 
-            className="bg-gray-800  grid gap-4 p-2 rounded-md relative w-[280px]">
+            className="bg-gray-800  grid gap-4 p-6 py-8 rounded-md relative w-[280px]">
 
             <button 
                 type="button"
@@ -76,7 +76,7 @@ return (
                     <i className='bx bx-x-circle text-red-500 text-2xl'  ></i>
             </button>
 
-            <h2 className="text-center text-white">{isUserToUpdate?"Editar Usuario" : "Crear Usuario"}</h2>
+            <h2 className="text-center text-white">{isUserToUpdate?"Editar Usuario" : "Nuevo Usuario"}</h2>
 
             <div className="flex gap-2 text-white ">
                 <label>
