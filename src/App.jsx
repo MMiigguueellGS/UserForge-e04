@@ -69,18 +69,13 @@ function App() {
     const URL = `https://randomuser.me/api/?gender=${gender}`;
     axios
       .get(URL)
-      .then(({ data }) => {
-        setImgGender(data.results[0].picture.medium)
-        console.log(imgGender??"vacio")
-       
-      })
+      .then(({ data }) => setImgGender(data.results[0].picture.medium))
       .catch((err) => console.log(err));
   };
 
   const handleClickUpdateUser = (user) => {
     setIsShowModal(true);
     setIsUserToUpdate(user);
-    //setIsShowModal(user)
   };
 
   const handleClickOpenModal = () => {
@@ -164,7 +159,7 @@ function App() {
         updateUser={updateUser}
         setIsShowModal={setIsShowModal}
         getPicWithGender={getPicWithGender}
-        imgGender={imgGender??""}
+        imgGender={imgGender ?? ""}
       />
 
       <UserList

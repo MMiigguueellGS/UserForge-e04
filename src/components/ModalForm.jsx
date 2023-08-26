@@ -29,7 +29,6 @@ const ModalForm = ({
   // argumento de mi funcion handleSubmit - se ejecuta con el boton
   const submit = (data) => {
     data.image_url = imgGender;
-    console.log(imgGender)
     if (data.birthday === "") {
       data.birthday = null;
     }
@@ -48,10 +47,7 @@ const ModalForm = ({
   };
 
   const handleGenderOnChange = () => {
-   gender==="female"? setGender("male"):setGender("female");
-    console.log(gender + " " + "soy el input radio")
-   
-   
+    gender === "female" ? setGender("male") : setGender("female");
   };
 
   //escucha nuestro cambios en isUserToUpdate
@@ -60,11 +56,10 @@ const ModalForm = ({
       reset(isUserToUpdate);
     }
   }, [isUserToUpdate]);
-  useEffect(()=>{
-    getPicWithGender(gender)
-  },[gender])
- 
-  
+  useEffect(() => {
+    getPicWithGender(gender);
+  }, [gender]);
+
   return (
     <section
       className={`fixed bg-black/60 top-0 bottom-0 left-0 right-0 flex justify-center items-center transition-[opacity_transform] duration-300 ${
@@ -119,6 +114,7 @@ const ModalForm = ({
             className="outline-none border-[1px] border-black p-1 bg-gray-400"
             id="email"
             type="text"
+            autoComplete="off"
             {...register("email", validationEmailInput)}
           />{" "}
           {/* register me enlaza un campo */}
@@ -147,6 +143,7 @@ const ModalForm = ({
             className="outline-none border-[1px] border-black p-1 bg-gray-400"
             id="first_name"
             type="text"
+            autoComplete="off"
             {...register("first_name", validationNameInput)}
           />
           {errors.first_name && (
