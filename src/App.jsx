@@ -69,7 +69,11 @@ function App() {
     const URL = `https://randomuser.me/api/?gender=${gender}`;
     axios
       .get(URL)
-      .then(({ data }) => setImgGender(data.results[0]))
+      .then(({ data }) => {
+        setImgGender(data.results[0].picture.medium)
+        console.log(imgGender??"vacio")
+       
+      })
       .catch((err) => console.log(err));
   };
 
@@ -91,7 +95,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoaderConfi(false);
-    }, 2000);
+    }, 1000);
   }, []);
 
   //inicio de mi dark
@@ -160,7 +164,7 @@ function App() {
         updateUser={updateUser}
         setIsShowModal={setIsShowModal}
         getPicWithGender={getPicWithGender}
-        imgGender={imgGender}
+        imgGender={imgGender??""}
       />
 
       <UserList
